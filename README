@@ -1,0 +1,19 @@
+/* Instruction and User Guideline of MSDOCK */
+
+
+This docking program is modified based on the Autodock 4.2.6
+
+In the this software package, each the modified files has a backup file starting with "ms...",
+and the original files are all renamed by adding ".bak" at the end of the filename.
+These files are modified to make sure they are thread-safe.
+
+Specifically, "msrdpso_omp_release.cc" is the main implementation of the MSL-RDPSO search algorithm,
+and it replace the pso.cc of Autodock 4.2.6.
+
+
+If you want apply the MSL-RPPSO algorithm to docking problems, modify "ga_run" to "do_pso" in the *.dpf file.
+
+Run MSDOCK:
+Serial Mode(1-thread): MSautodock4 -p *.dpf -l *.dlg
+Parallel Mode(N-thread): MSautodock4.omp -p *.dpf -l *.dlg 
+(N equals to the return value of the "omp_get_thread_num()" function in main.cc)
