@@ -1,0 +1,10 @@
+MSautodock4-quicksort.o: quicksort.cc /usr/include/stdc-predef.h \
+ quicksort.h swap.h typedefs.h
+
+/usr/include/stdc-predef.h:
+
+quicksort.h:
+
+swap.h:
+
+typedefs.h:
