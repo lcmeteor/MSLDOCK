@@ -1,6 +1,0 @@
-MSautodock4_omp-strindex.o: strindex.cc /usr/include/stdc-predef.h \
- strindex.h
-
-/usr/include/stdc-predef.h:
-
-strindex.h:

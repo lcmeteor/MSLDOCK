@@ -1,4 +1,0 @@
-MSautodock4-mingw_getrusage.o: mingw_getrusage.cc \
- /usr/include/stdc-predef.h
-
-/usr/include/stdc-predef.h:

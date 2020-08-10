@@ -1,5 +1,0 @@
-MSautodock4_omp-swap.o: swap.cc /usr/include/stdc-predef.h swap.h
-
-/usr/include/stdc-predef.h:
-
-swap.h:
