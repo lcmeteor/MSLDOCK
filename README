@@ -1,15 +1,15 @@
-MSDOCK README $Id: README,v 1.0 2018/08/09 18:44:42 mp Exp $
+MSLDOCK README $Id: README,v 1.0 2018/08/09 18:44:42 mp Exp $
 
 
 ==========================
-Introduction for MSDOCK
+Introduction for MSLDOCK
 ==========================
 
-The MSDOCK program is developed based on AutoDock 4.2.6.
+The MSLDOCK program is developed based on AutoDock 4.2.6.
 
 A novel multi-swarm optimization search algorithm, namely multi-swarm
 Lamarckian Random Drift Particle Swarm Optimization (MSLRDPSO), 
-has been added in MSDOCK. The core part of the MSLRDPSO algorithm
+has been added in MSLDOCK. The core part of the MSLRDPSO algorithm
 is the random drift particle swarm optimization (RDPSO) with a
 newly proposed multi-swarm strategy. The Solis and Wets local search
 method is also used in MSLRDPSO, applied in a modified implementation,
@@ -18,7 +18,7 @@ making it be adapt to the multi-swarm structure.
 The key parameter of MSLRDPSO is the number of sub-swarms. The default
 setting of this parameter is 2 sub-swarms for docking tasks with torsions
 more than 20 and 6 sub-swarms for others. In our related paper, it has
-been proved that this parameter setting can make MSDOCK to be better than
+been proved that this parameter setting can make MSLDOCK to be better than
 several docking programs for flexible ligand docking problems.
 
 The MSLRDPSO algorithm has both serial mode and parallel mode. It should
@@ -40,7 +40,7 @@ Note that the proposed MSLRDPSO algorithm is not suppoted by AutoDockTools
 (ADT), a graphical user interface for AutoDock. In this version, it can only
 be implemented in a command-line usage.
 
-With respect to the docking preparation for MSDOCK, users can still use
+With respect to the docking preparation for MSLDOCK, users can still use
 AutoGrid. They are contained in the official package of AutoDock 4.2.6, 
 can be downloaded from http://autodock.scripps.edu.
 
@@ -51,7 +51,7 @@ For more details about other functions those already contained in AutoDock
 Code download
 ===========================
 
- https://github.com/lcmeteor/MSDOCK-OPEN
+ https://github.com/lcmeteor/MSLDOCK
 
 ===========================
 Platform
@@ -59,38 +59,38 @@ Platform
 
 x86_64Linux2 : 64-bit Intel Linux
 
-Caution: we do not test MSDOCK on all many platforms.
+Caution: we do not test MSLDOCK on many platforms.
 Our experiments are all run on a Ubuntu 16.04 Linux platform
 
 ==================================
-Building MSDOCK from source code
+Building MSLDOCK from source code
 ==================================
 
 Download all the source code files from the web site.
 
 The general process is:
 
- "cd" to msdock source directory
+ "cd" to msldock source directory
  ./configure
  make
- make install (optional, this will install msdock and msdock.omp executable)
+ make install (optional, this will install msldock and msldock.omp executable)
 
 ==================
-Usage for MSDOCK
+Usage for MSLDOCK
 ==================
 
-Set the run_mode in .dpf file to be "msdock_run" to call docking using 
+Set the run_mode in .dpf file to be "msldock_run" to call docking using 
 MSLRDPSO (default in AutoDock4: ga_run).
 
-The MSLRDPSO in MSDOCK has two modes:
-Normal mode (Serial mode): msdock -p file.dpf -l file.dlg
-Parallel mode: msdock.omp -p file.dpf -l file.dlg
+The MSLRDPSO in MSLDOCK has two modes:
+Normal mode (Serial mode): msldock -p file.dpf -l file.dlg
+Parallel mode: msldock.omp -p file.dpf -l file.dlg
 
 Some specified parameters for MSLRDPSO can be set manually in the .dpf file 
 when using MSLRDPSO. Their short name in the .dpf file and the corresponding 
 introductions are listed below:
 
-msdock_run: number of runs by using MSLRDPSO for the docking task
+msldock_run: number of runs by using MSLRDPSO for the docking task
 msrd_num_subs: number of sub-swarms (default: 2 for torsions>20 and 6 for others)
 msrd_FE_interval: number of function evaluations between two feature exchange methods
     (default: 30*pop_size)
@@ -107,7 +107,7 @@ msrd_regenerate_at_limit: the way of out-of-boundary process for each particle (
 
 Generally, users can adjust msrd_num_subs and msrd_FE_interval to obtain better
 results for a specified docking task, and other parameters do not need to be changed.
-The original parameter settings for AutoDock 4.2.6 can also be set in MSDOCK,
+The original parameter settings for AutoDock 4.2.6 can also be set in MSLDOCK,
 see AutoDock4.2_UserGuide.dpf for more details.
 
 It should be noted that in parallel mode each thread is designed to load one
@@ -115,7 +115,7 @@ sub-swarms, thus, the set of msrd_num_subs also determines the number of threads
 loaded in parallel mode. 
 
 =============================
-Modifying MSDOCK
+Modifying MSLDOCK
 =============================
 
 Please feel free to change the programs to suit your needs.
