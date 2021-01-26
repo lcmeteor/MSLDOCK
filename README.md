@@ -1,2 +1,2 @@
 # MSLDOCK
-A multi-swarm optimization docking program for flexible ligand docking
+A Multi-Swarm Optimization Docking Program for Flexible Ligand Docking and Virtual Screening
