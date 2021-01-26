@@ -4212,10 +4212,7 @@ while( fgets(line, LINE_LEN, parFile) != NULL ) { /* Pass 2 PARSING-DPF parFile 
         get1arg( line, "%*s %d", &nruns,"MSLDOCK" );
 
     if (msrd_thNum == 0) { //msrd_thNum has not been specified manually
-    	if (sInit.ntor > 20)
-            msrd_thNum = 2; //torsions larger than 20 then number of sub-swarms set to 2
-	else
-	    msrd_thNum = 6; //torsions no larger than 20 then number of sub-swarms set to 6
+    	msrd_thNum = 6; //Number of sub-swarms set to 6 for normal situations, for docking with many repetitions please set msrd_thNum to 2
     }
 
 #ifdef _OPENMP
